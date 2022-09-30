@@ -1,38 +1,56 @@
 package bt3_bai4;
 
 public class Fan {
-    int slow,medium,fast;
+    public static final int SLOW=1;
+    public static final int MEDIUM=2;
+    public static final int FAST=3;
+    private int speed;
+    private boolean on;
+    private double radius;
+    private String color;
+     public Fan(){
+         this.speed=SLOW;
+         this.on=false;
+         this.radius=5;
+         this.color="blue";
+     }
 
-    public Fan() {
+    public int getSpeed() {
+        return speed;
     }
 
-    public Fan(int slow, int medium, int fast) {
-        this.slow = slow;
-        this.medium = medium;
-        this.fast = fast;
+    public void setSpeed(int speed) {
+        this.speed = speed;
     }
 
-    public int getSlow() {
-        return slow;
+    public boolean isOn() {
+        return on;
     }
 
-    public void setSlow(int slow) {
-        this.slow = 1;
+    public void setOn(boolean on) {
+        this.on = on;
     }
 
-    public int getMedium() {
-        return medium;
+    public double getRadius() {
+        return radius;
     }
 
-    public void setMedium(int medium) {
-        this.medium = 2;
+    public void setRadius(double radius) {
+        this.radius = radius;
     }
 
-    public int getFast() {
-        return fast;
+    public String getColor() {
+        return color;
     }
 
-    public void setFast(int fast) {
-        this.fast = 3;
+    public void setColor(String color) {
+        this.color = color;
+    }
+    public String toString(){
+         if (this.on){
+             return "Speed: "+this.speed+" color: "+this.color+" Radius: "+this.radius+" Fan is on";
+         }else {
+             return "Color: "+this.color+" Radius: "+this.radius+" Fan is off";
+         }
     }
 }

@@ -3,34 +3,35 @@ package bt2_bai4;
 import java.util.Date;
 
 public class StopWatch {
-    private Date startTime;
-    public Date endTime;
+    private long startTime;
+    public long endTime;
 
     public StopWatch() {
+        this.startTime = System.currentTimeMillis();
+
     }
 
-    public StopWatch(Date startTime, Date endTime) {
+    public StopWatch(long startTime, long endTime) {
         this.startTime = startTime;
         this.endTime = endTime;
     }
 
-    public Date getStartTime() {
+    public long getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(Date startTime) {
-        this.startTime = startTime;
-    }
-
-    public Date getEndTime() {
+    public long getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(Date endTime) {
-        this.endTime = endTime;
-    }
-
-    public long getElapsedTime(){
-        return System.currentTimeMillis();
-    }
+   public  void  start(){
+        this.startTime=System.currentTimeMillis();
+   }
+   public  void  end(){
+        this.endTime=System.currentTimeMillis();
+   }
+   public long getElapsedTime(){
+        long time =this.endTime-this.startTime;
+        return  time;
+   }
 }
